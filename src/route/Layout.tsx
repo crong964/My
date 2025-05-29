@@ -189,11 +189,11 @@ export default function Layout() {
                         </div>
                     </div>
                 </div>
-                <>
+                <div className="w-full">
                     <div className="h-16 sticky top-0  bg-white">
 
                     </div>
-                    <div className="bg-[#F5F5F5] max-lg:w-max flex-1 w-full relative ">
+                    <div className="bg-[#F5F5F5] max-lg:w-max  flex-1 w-full relative ">
                         <div onClick={() => {
                             sS(true)
                         }}
@@ -204,7 +204,7 @@ export default function Layout() {
                         </div>
                         <Outlet />
                     </div>
-                </>
+                </div>
             </div>
         </>
     )

@@ -24,7 +24,7 @@ export default function AlbumDetail(p: iAlbumDetail) {
         };
     }, [userapi.data, photoapi.data]);
     return (
-        <div className="p-6 bg-white min-h-90 ">
+        <div className="p-6 bg-white min-h-90 max-lg:w-screen">
             <div className="p-6 border-2 border-[#00000006]">
                 {
                     user ? <UserInfor link={true} {...user}></UserInfor> : <></>

@@ -19,7 +19,7 @@ export default function User() {
 
     }, [data]);
     return (
-        <div className="p-6 min-h-90 ">
+        <div className="p-6 min-h-90 max-lg:w-max">
             <div className="text-2xl">User</div>
             <table className="table-auto w-full text-sm mt-3">
                 <thead className="text-start">
