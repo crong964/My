@@ -39,26 +39,27 @@ export default function Albums() {
     }, [alapi.data, uapi.data]);
 
     return (
-        <div className="p-6 min-h-90 ">
-            <table className="table-auto w-full text-sm mt-3">
-                <thead className="text-start">
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>User</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {(uapi.loading || alapi.loading) ?
-                        <Loading /> :
-                        al.map((v) => {
-                            return <AlbumCell {...v} name={u[v.userId].name}></AlbumCell>
-                        })
-                    }
-                </tbody>
-            </table>
-
+        <div className="lg:p-6 min-h-90 ">
+            <div className="max-lg:overflow-x-scroll  max-lg:w-screen">
+                <table className="table-auto w-full text-sm mt-3">
+                    <thead className="text-start">
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>User</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {(uapi.loading || alapi.loading) ?
+                            <Loading /> :
+                            al.map((v) => {
+                                return <AlbumCell {...v} name={u[v.userId].name}></AlbumCell>
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
             {
                 (uapi.loading || alapi.loading) ? <></> :
                     <div className=" mt-4">

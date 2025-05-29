@@ -21,7 +21,7 @@ export default function UserId() {
         }
     }, [u.data, al.data])
     return (
-        <div className="min-h-90 p-6">
+        <div className="min-h-90 p-6 max-lg:overflow-y-auto">
             <div className="flex space-x-2">
                 <NavLink
                     to="/user"

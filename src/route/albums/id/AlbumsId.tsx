@@ -19,7 +19,7 @@ export default function AlbumsId() {
         }
     }, [al.data])
     return (
-        <div className="min-h-90 p-6 w-full">
+        <div className="min-h-90 p-6 w-full overflow-y-auto">
             <div className="flex space-x-2">
                 <NavLink
                     to="/albums"

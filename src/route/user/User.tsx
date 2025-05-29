@@ -19,41 +19,43 @@ export default function User() {
 
     }, [data]);
     return (
-        <div className="p-6 min-h-90 max-lg:w-max">
-            <div className="text-2xl">User</div>
-            <table className="table-auto w-full text-sm mt-3">
-                <thead className="text-start">
-                    <tr>
-                        <th>ID</th>
-                        <th>
-                            Avatar
-                        </th>
-                        <th>
-                            Name
-                        </th>
-                        <th>
-                            Email
-                        </th>
-                        <th>
-                            Phone
-                        </th>
-                        <th>Website	</th>
-                        <th>Action	</th>
-                    </tr>
-                </thead>
-                {
-                    loading ?
-                        <Loading></Loading> :
-                        <tbody>
-                            {
-                                d.map((v) => {
-                                    return <UserCell key={v.id} {...v} />
-                                })
-                            }
-                        </tbody>
-                }
+        <div className="lg:p-6 min-h-90 ">
+            <div className="text-2xl max-[1000px]:p-6">User</div>
+            <div className="max-lg:overflow-x-scroll max-lg:w-screen">
+                <table className="table-auto w-full text-sm mt-3">
+                    <thead className="text-start">
+                        <tr>
+                            <th>ID</th>
+                            <th>
+                                Avatar
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>Website	</th>
+                            <th>Action	</th>
+                        </tr>
+                    </thead>
+                    {
+                        loading ?
+                            <Loading></Loading> :
+                            <tbody>
+                                {
+                                    d.map((v) => {
+                                        return <UserCell key={v.id} {...v} />
+                                    })
+                                }
+                            </tbody>
+                    }
 
-            </table>
+                </table>
+            </div>
         </div>
     )
 }

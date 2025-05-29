@@ -46,7 +46,7 @@ export default function Layout() {
                     s ?
                         <>
                             <div
-                                className="w-48 block animate-xh fixed top-0 lg:hidden h-full z-20 bg-white w-50 pr-1">
+                                className="w-48 block animate-xh fixed top-0 lg:hidden h-full z-11120 bg-white w-50 pr-1">
                                 <Link to={"/"} className="h-16 flex items-center px-4">
                                     <img width={100} src="https://geekup.vn/Icons/geekup-logo-general.svg" alt="" srcSet="" />
                                 </Link>
@@ -190,14 +190,14 @@ export default function Layout() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <div className="h-16 sticky top-0  bg-white">
+                    <div className="h-16 sticky z-120 top-0 max-lg:w-screen bg-white">
 
                     </div>
-                    <div className="bg-[#F5F5F5] max-lg:w-max  flex-1 w-full relative ">
+                    <div className="bg-[#F5F5F5] max-lg:w-svw flex-1 w-full relative ">
                         <div onClick={() => {
                             sS(true)
                         }}
-                            className="block absolute py-2 top-0 lg:hidden cursor-pointer">
+                            className="block fixed py-2 top-16 lg:hidden cursor-pointer">
                             <Button type="default">
                                 <svg viewBox="0 0 1024 1024" focusable="false" data-icon="bars" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"></path></svg>
                             </Button>
