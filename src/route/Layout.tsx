@@ -7,9 +7,10 @@ export default function Layout() {
     const [s, sS] = useState(false);
     const [h, sH] = useState(false);
     useEffect(() => {
+        var f: number
         if (!s) {
-            setTimeout(() => {
-               sH(false) 
+            f = setTimeout(() => {
+                sH(false)
             }, 3000);
             return
         }
@@ -32,6 +33,9 @@ export default function Layout() {
         window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 
         return () => {
+            if (f) {
+                clearTimeout(f)
+            }
             window.removeEventListener('scroll', preventDefault, false); // older FF
             window.removeEventListener('touchmove', preventDefault); // mobile
             window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
@@ -43,7 +47,6 @@ export default function Layout() {
                 {
                     s ?
                         <>
-
                             <div
                                 onClick={() => {
                                     sS(false)
@@ -92,7 +95,7 @@ export default function Layout() {
 
                             <div onClick={(e) => {
                                 sS(false)
-                            }} className="fixed top-0 w-screen z-10 h-screen bg-[#8787878d]">
+                            }} className="fixed top-0 w-lvh z-10 h-svh bg-[#8787878d]">
 
                             </div>
                         </> :
@@ -193,7 +196,7 @@ export default function Layout() {
                     <div className="h-16 sticky top-0 w-full bg-white">
 
                     </div>
-                    <div className="bg-[#F5F5F5] relative w-full">
+                    <div className="bg-[#F5F5F5] relative ">
                         <div onClick={() => {
                             sS(true)
                         }}
