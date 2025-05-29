@@ -12,9 +12,11 @@ export default function Layout() {
             f = setTimeout(() => {
                 sH(false)
             }, 3000);
-            return
+
+        } else {
+            sH(true)
         }
-        sH(true)
+
         var keys: any = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
         function preventDefault(e: any) {
@@ -28,17 +30,13 @@ export default function Layout() {
             }
         }
         var wheelOpt = { passive: false }
-        window.addEventListener('scroll', preventDefault, false); // older FF
-        window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-        window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+       
 
         return () => {
-            if (f) {
+            if (f && s) {
                 clearTimeout(f)
             }
-            window.removeEventListener('scroll', preventDefault, false); // older FF
-            window.removeEventListener('touchmove', preventDefault); // mobile
-            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+           
         }
     }, [s])
     return (
@@ -48,13 +46,13 @@ export default function Layout() {
                     s ?
                         <>
                             <div
-                                onClick={() => {
-                                    sS(false)
-                                }} className="w-48 block animate-xh fixed top-0 lg:hidden h-screen z-20 bg-white w-50 pr-1">
+                                className="w-48 block animate-xh fixed top-0 lg:hidden h-full z-20 bg-white w-50 pr-1">
                                 <Link to={"/"} className="h-16 flex items-center px-4">
                                     <img width={100} src="https://geekup.vn/Icons/geekup-logo-general.svg" alt="" srcSet="" />
                                 </Link>
-                                <div className="pt-2 text-sm">
+                                <div onClick={() => {
+                                    sS(false)
+                                }} className="pt-2 text-sm">
                                     <NavLink
                                         to="/albums"
                                         className={({ isActive, isPending }) => {
@@ -95,12 +93,12 @@ export default function Layout() {
 
                             <div onClick={(e) => {
                                 sS(false)
-                            }} className="fixed top-0 w-lvh z-10 h-svh bg-[#8787878d]">
+                            }} className="fixed top-0 z-10 h-full w-full bg-[#8787878d]">
 
                             </div>
                         </> :
                         <>
-                            <div className={`${h ? "animate-bm" : ""}  w-48  h-screen block fixed top-0 -left-50 lg:hidden  z-20 bg-white w-50 pr-1`}>
+                            <div className={`animate-bm  w-48  h-full block fixed top-0 -left-50 lg:hidden  z-20 bg-white w-50 pr-1`}>
                                 <Link to={"/"} className="h-16 flex items-center px-4">
                                     <img width={100} src="https://geekup.vn/Icons/geekup-logo-general.svg" alt="" srcSet="" />
                                 </Link>
@@ -146,7 +144,7 @@ export default function Layout() {
                         </>
                 }
             </div>
-            <div className="flex lg:min-w-320">
+            <div className="lg:flex ">
                 <div className="hidden lg:block w-50 pr-1">
                     <div className="w-48 fixed top-0">
                         <Link to={"/"} className="h-16 flex items-center px-4">
@@ -191,12 +189,11 @@ export default function Layout() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full lg:min-w-[1100px]">
-
-                    <div className="h-16 sticky top-0 w-full bg-white">
+                <>
+                    <div className="h-16 sticky top-0  bg-white">
 
                     </div>
-                    <div className="bg-[#F5F5F5] relative ">
+                    <div className="bg-[#F5F5F5] max-lg:w-max flex-1 w-full relative ">
                         <div onClick={() => {
                             sS(true)
                         }}
@@ -207,7 +204,7 @@ export default function Layout() {
                         </div>
                         <Outlet />
                     </div>
-                </div>
+                </>
             </div>
         </>
     )

@@ -37,6 +37,7 @@ export default function Albums() {
 
         };
     }, [alapi.data, uapi.data]);
+
     return (
         <div className="p-6 min-h-90 ">
             <table className="table-auto w-full text-sm mt-3">
