@@ -40,8 +40,8 @@ export default function Albums() {
 
     return (
         <div className="lg:p-6 min-h-90 ">
-            <div className="max-lg:overflow-x-scroll  max-lg:w-screen">
-                <table className="table-auto w-full text-sm mt-3">
+            <div className="max-lg:overflow-x-scroll">
+                <table className="table-auto max-lg:w-max w-full text-sm mt-3">
                     <thead className="text-start">
                         <tr>
                             <th>ID</th>
