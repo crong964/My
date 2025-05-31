@@ -9,13 +9,17 @@ export default function AlbumCell(p: iAlbum) {
         <tr className="bg-white">
             <td>{p.id}</td>
             <td>{p.title}</td>
-            <td className="flex items-center space-x-2">
-                <img className="size-7.5"
-                    src={`https://ui-avatars.com/api/?name=${p.name.replace(" ", "+")}&background=random&rounded=true`}
-                    alt={p.name} srcSet="" />
-                <Link className="text-blue-400" to={'/user/' + p.userId}>{p.name}</Link>
+            <td className="p-4" >
+                <div className="w-max">
+                    <div className="flex items-center space-x-2">
+                        <img className="size-7.5"
+                            src={`https://ui-avatars.com/api/?name=${p.name.replace(" ", "+")}&background=random&rounded=true`}
+                            alt={p.name} srcSet="" />
+                        <Link className="text-blue-400 max-lg:w-min" to={'/user/' + p.userId}>{p.name}</Link>
+                    </div>
+                </div>
             </td>
-            <td>
+            <td className="p-4 ">
                 <Link to={'/albums/' + p.id}  >
                     <Button
                         variant="outlined"
