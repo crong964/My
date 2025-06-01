@@ -53,7 +53,7 @@ export default function Albums() {
                     <tbody>
                         {
                             al.map((v) => {
-                                return <AlbumCell {...v} name={u[v.userId].name}></AlbumCell>
+                                return <AlbumCell key={v.id} {...v} name={u[v.userId].name}></AlbumCell>
                             })
                         }
                     </tbody>
