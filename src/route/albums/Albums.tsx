@@ -51,20 +51,25 @@ export default function Albums() {
                         </tr>
                     </thead>
                     <tbody>
-                        {(uapi.loading || alapi.loading) ?
-                            <Loading /> :
+                        {
                             al.map((v) => {
                                 return <AlbumCell {...v} name={u[v.userId].name}></AlbumCell>
                             })
                         }
                     </tbody>
                 </table>
+                {(uapi.loading || alapi.loading) ?
+                    <div className="my-5">
+                        <Loading />
+                    </div> :
+                    <></>
+                }
             </div>
             {
                 (uapi.loading || alapi.loading) ? <></> :
                     <div className=" mt-4">
                         <div className="hidden sm:block">
-                            <Pagination  itemRender={(page, type) => {
+                            <Pagination itemRender={(page, type) => {
                                 if (type == "page") {
                                     return (
                                         <Link to={`/albums?pageSize=${pageSize}&current=${page}`}>
@@ -102,13 +107,13 @@ export default function Albums() {
                                     )
                                 }
                             }} align="end" onShowSizeChange={(p, s) => {
-                                location.href = `/albums?pageSize=${s}&current=${p}`
+                                location.href = `/albums?pageSize=${s}&current=${1}`
 
                             }} showTitle={true} pageSize={pageSize} defaultCurrent={1} current={current} total={100}></Pagination>
 
                         </div>
-                         <div className="flex justify-center md:hidden">
-                            <Pagination simple  itemRender={(page, type) => {
+                        <div className="flex justify-center sm:hidden">
+                            <Pagination simple itemRender={(page, type) => {
                                 if (type == "page") {
                                     return (
                                         <Link to={`/albums?pageSize=${pageSize}&current=${page}`}>
@@ -145,7 +150,7 @@ export default function Albums() {
                                         </Button>
                                     )
                                 }
-                            }} align="end"   pageSize={pageSize} defaultCurrent={1} current={current} total={100}></Pagination>
+                            }} align="center" pageSize={pageSize} defaultCurrent={1} current={current} total={100}></Pagination>
 
                         </div>
                     </div>

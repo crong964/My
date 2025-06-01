@@ -6,7 +6,7 @@ import { EyeOutlined } from "@ant-design/icons";
 
 export default function AlbumCell(p: iAlbum) {
     return (
-        <tr className="bg-white">
+        <tr className="bg-white hover:bg-[#68686801]">
             <td>{p.id}</td>
             <td>{p.title}</td>
             <td className="p-4" >

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-xh: xh 1s ease-in-out;
+  --animate-xh: xh 0.2s ease-in-out;
 
   @keyframes xh {
 
@@ -16,7 +16,7 @@
 
 
 
-  --animate-bm: bm 1s ease-in-out;
+  --animate-bm: bm 0.2s ease-in-out;
   @keyframes bm {
 
     0% {
@@ -41,6 +41,6 @@ th {
 }
 
 td {
-  padding: 14px;
+  padding: 16px;
   text-align: start;
 }

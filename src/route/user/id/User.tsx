@@ -44,7 +44,7 @@ export default function UserId() {
                 <div>/</div>
                 <div>Show</div>
             </div>
-            <div className="flex items-center space-x-3.5 py-3 px-3">
+            <div className="flex items-center  w-max space-x-3.5 py-3 px-3">
 
                 <Button
                     onClick={() => {
@@ -53,12 +53,12 @@ export default function UserId() {
                     type="text"
                     icon={<svg viewBox="64 64 896 896" focusable="false" data-icon="arrow-left" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 000 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg>}>
                 </Button>
-                <div className="text-lg font-semibold">
+                <div className="text-[20px] font-semibold ">
                     Show User
                 </div>
 
             </div>
-            <div className="p-6 bg-white min-h-90 ">
+            <div className="p-6 bg-white min-h-90 overflow-x-auto">
                 <div className="p-6 border-2 border-[#00000006]">
                     {
                         userdata ? <UserInfor link={false} {...userdata}></UserInfor> : <></>
@@ -76,21 +76,26 @@ export default function UserId() {
                     <table className="table-auto w-full">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Actions</th>
+                                <th className="text-[14px] font-semibold">ID</th>
+                                <th className="text-[14px] font-semibold">Title</th>
+                                <th className="text-[14px] font-semibold">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 al.loading ?
-                                    <Loading></Loading> :
+                                    <></> :
                                     aldata?.map((v) => {
                                         return <AlbumUserCell key={v.id} {...v} />
                                     })
                             }
                         </tbody>
                     </table>
+                    {
+                        al.loading ?
+                            <Loading></Loading> :
+                            <></>
+                    }
                 </div>
             </div>
         </div>

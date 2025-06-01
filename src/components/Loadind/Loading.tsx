@@ -1,7 +1,12 @@
 import { Spin } from "antd";
 
 export default function Loading() {
-    return <div className="w-full flex justify-center">
-        <Spin></Spin>
-    </div>
+    return (
+        <>
+            <div className="w-full flex justify-center">
+                <Spin></Spin>
+            </div>
+           
+        </>
+    )
 }

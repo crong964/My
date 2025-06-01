@@ -2,8 +2,8 @@ import type { iUserInfor } from "./interface";
 
 export default function UserInfor(p: iUserInfor) {
     return (
-        <div className="flex space-x-6">
-            <div>
+        <div className="flex space-x-6 w-max">
+            <div className="w-max">
                 <img className="rounded-full size-7.5" src={`https://ui-avatars.com/api/?name=${p?.name?.replace(" ", "+")}&background=random`}
                     alt={p.name} srcSet="" />
             </div>

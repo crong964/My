@@ -5,7 +5,7 @@ import { EyeOutlined } from "@ant-design/icons";
 
 export default function UserCell(p: iUser) {
     return (
-        <tr className="bg-white">
+        <tr className="bg-white hover:bg-[#96969605]">
             <td>{p.id}</td>
             <td><img className="rounded-full size-7.5" src={`https://ui-avatars.com/api/?name=${p.name.replace(" ", "+")}&background=random`} alt={p.name} srcSet="" /></td>
             <td>{p.name}</td>

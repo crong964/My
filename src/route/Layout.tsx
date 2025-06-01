@@ -46,7 +46,7 @@ export default function Layout() {
                     s ?
                         <>
                             <div
-                                className="w-48 block animate-xh fixed top-0 lg:hidden h-full z-11120 bg-white w-50 pr-1">
+                                className="w-48 block animate-xh fixed top-0 lg:hidden h-full z-777 bg-white w-50 pr-1">
                                 <Link to={"/"} className="h-16 flex items-center px-4">
                                     <img width={100} src="https://geekup.vn/Icons/geekup-logo-general.svg" alt="" srcSet="" />
                                 </Link>
@@ -93,7 +93,7 @@ export default function Layout() {
 
                             <div onClick={(e) => {
                                 sS(false)
-                            }} className="fixed top-0 z-10 h-full w-full bg-[#8787878d]">
+                            }} className="fixed top-0 z-666 h-full w-full bg-[#00000092]">
 
                             </div>
                         </> :
@@ -145,8 +145,8 @@ export default function Layout() {
                 }
             </div>
             <div className="lg:flex ">
-                <div className="hidden lg:block w-50 pr-1">
-                    <div className="w-48 fixed top-0">
+                <div className="hidden lg:block  w-50 pr-1">
+                    <div className="w-49 fixed top-0">
                         <Link to={"/"} className="h-16 flex items-center px-4">
                             <img width={100} src="https://geekup.vn/Icons/geekup-logo-general.svg" alt="" srcSet="" />
                         </Link>
@@ -189,11 +189,11 @@ export default function Layout() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full">
+                <div className="flex-1">
                     <div className="h-16 sticky z-120 top-0 max-lg:w-screen bg-white">
 
                     </div>
-                    <div className="bg-[#F5F5F5] max-lg:w-svw flex-1 w-full relative ">
+                    <div className="bg-[#F5F5F5] max-lg:w-svw w-full relative ">
                         <div onClick={() => {
                             sS(true)
                         }}
