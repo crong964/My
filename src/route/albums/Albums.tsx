@@ -112,7 +112,7 @@ export default function Albums() {
                             }} showTitle={true} pageSize={pageSize} defaultCurrent={1} current={current} total={100}></Pagination>
 
                         </div>
-                        <div className="flex justify-center sm:hidden">
+                        <div className=" sm:hidden">
                             <Pagination simple itemRender={(page, type) => {
                                 if (type == "page") {
                                     return (
