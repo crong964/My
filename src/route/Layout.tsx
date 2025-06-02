@@ -51,7 +51,7 @@ export default function Layout() {
                         </Fragment>
                 }
             </div>
-            <div className="flex ">
+            <div className="lg:flex ">
                 <div className="hidden lg:block  w-50 pr-1">
                     <div className="w-49 fixed top-0">
                         <Link to={"/"} className="h-16 flex items-center px-4">
@@ -96,8 +96,8 @@ export default function Layout() {
                         </div>
                     </div>
                 </div>
-                <div className="flex-1 overflow-y-auto">
-                    <div className="h-16 fixed lg:sticky z-120 top-0 max-lg:w-screen bg-white">
+                <div className="lg:flex-1 ">
+                    <div className="h-16 sticky z-120 top-0 max-lg:w-screen bg-white">
 
                     </div>
                     <div className="bg-[#F5F5F5]  w-full relative ">

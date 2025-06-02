@@ -19,9 +19,9 @@ export default function User() {
 
     }, [data]);
     return (
-        <div className="p-6 min-h-90 ">
+        <div className="p-6 min-h-90 overflow-x-hidden">
             <div className="text-2xl font-semibold">User</div>
-            <div className="max-lg:overflow-x-scroll max-lg:w-screen">
+            <div className="max-lg:overflow-x-scroll ">
                 <table className="table-auto w-full text-sm mt-3">
                     <thead className="text-start">
                         <tr className="bg-[#F5F5F5]">

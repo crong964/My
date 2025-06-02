@@ -20,7 +20,7 @@ export default function UserCell(p: iUser) {
             <td className="text-blue-400">
                 <a target="_blank" className="cursor-pointer" href={`http://${p.website}`}>{p.website}</a>
             </td>
-            <td>
+            <td className="w-max">
                 <Link to={'/user/' + p.id}  >
                     <Button
                         variant="outlined"
