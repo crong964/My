@@ -47,7 +47,7 @@ export default function Navi(p: { onclick(g: boolean): void }) {
                         </div>
                     </NavLink>
                 </div>
-                <div>Vào</div>
+
             </div>
         </Fragment>
     )
